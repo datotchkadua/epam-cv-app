@@ -1,0 +1,45 @@
+@use "../../styles/mixins.scss";
+@use "../../styles/variables.scss" as v;
+
+.experience {
+  min-height: 200px;
+  @include mixins.component-margin-padding;
+
+  &__header {
+    @include mixins.component-header;
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+
+    &--company-year {
+      min-width: 160px;
+      margin-right: 20px;
+      @include mixins.breakpoint(sm) {
+        min-width: 120px;
+      }
+      &__company {
+        margin-bottom: v.$header-mb;
+      }
+      &__year {
+        font-size: 16px;
+        color: #667081;
+      }
+    }
+
+    &--position-description {
+      display: flex;
+      flex-direction: column;
+
+      &__position {
+        margin-bottom: v.$header-mb;
+      }
+
+      &__description {
+        @include mixins.component-description;
+      }
+    }
+  }
+}

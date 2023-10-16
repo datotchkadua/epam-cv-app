@@ -1,0 +1,15 @@
+@use "../../styles/mixins.scss";
+
+.box {
+  display: flex;
+  flex-direction: column;
+  @include mixins.component-margin-padding;
+
+
+  &__header {
+    @include mixins.component-header;
+  }
+  &__description {
+    @include mixins.component-description;
+  }
+}

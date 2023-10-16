@@ -1,0 +1,68 @@
+@use "../../styles/mixins.scss";
+@use "../../styles/variables.scss" as v;
+.timeline {
+  min-height: 30vh;
+  max-height: 80vh;
+  overflow-y: auto;
+  @include mixins.component-margin-padding;
+
+  &__header {
+    @include mixins.component-header;
+  }
+
+  &__list {
+    position: relative;
+    padding: 15px;
+
+    &::before {
+      background: v.$green;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 10px;
+      width: 4px;
+      content: "";
+      margin-left: 18px;
+    }
+
+    &--item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+
+      &__date {
+        padding: 15px;
+        background: #fff;
+        position: relative;
+        left: -15px;
+      }
+      &__info {
+        position: relative;
+
+        &--div {
+          background: v.$gray;
+          padding: 15px;
+
+          &__header {
+            margin-bottom: v.$header-mb;
+          }
+          &__description {
+            @include mixins.component-description;
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 15px;
+          left: -10px;
+          width: 0;
+          height: 0;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-right: 10px solid #eee;
+        }
+      }
+    }
+  }
+}

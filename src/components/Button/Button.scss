@@ -1,0 +1,30 @@
+@use "../../styles/variables.scss" as v;
+
+.btn {
+  display: inline-flex;
+  max-width: 125px;
+  height: 40px;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: v.$darkGray;
+  border: none;
+  transition: 0.3s;
+  color: v.$white;
+
+  &:hover {
+    background-color: v.$green;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #667080;
+    &:hover {
+      background-color: #667080;
+    }
+  }
+}

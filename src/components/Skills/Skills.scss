@@ -1,0 +1,95 @@
+@use "../../styles/mixins.scss";
+@use "../../styles/variables.scss" as v;
+.skills {
+  display: flex;
+  flex-direction: column;
+  @include mixins.component-margin-padding;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--header {
+      @include mixins.component-header;
+    }
+  }
+  &__edit-container {
+    border: 1px solid v.$green;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      &--group {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        label {
+          margin-right: 20px;
+        }
+
+        &__input {
+          width: 270px;
+          height: 40px;
+          border-radius: 5px;
+          border: 1px solid v.$darkGray;
+          padding: 5px;
+          color: v.$darkGray;
+          font-size: 14px;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__charts {
+    display: flex;
+    flex-direction: column;
+
+    &--bar {
+      display: flex;
+      padding: 5px 15px;
+      align-items: center;
+      background-color: v.$green;
+      color: v.$white;
+      border-radius: 3px;
+      font-size: 16px;
+      margin-bottom: 5px;
+
+      p {
+        text-overflow: hidden;
+      }
+    }
+
+    &--div {
+      margin-top: 25px;
+      display: flex;
+      overflow: hidden;
+
+      &__ruler {
+        border-bottom: 1px solid v.$gray-border;
+        border-left: 1px solid v.$gray-border;
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 5px 0px;
+        &:last-child {
+          border-right: 1px solid v.$gray-border;
+        }
+      }
+    }
+    &--labels {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px;
+      color: v.$gray-border;
+      margin-top: 10px;
+    }
+  }
+}

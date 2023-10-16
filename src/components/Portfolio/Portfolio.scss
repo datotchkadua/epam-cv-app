@@ -1,0 +1,45 @@
+@use "../../styles/mixins.scss";
+@use "../../styles/variables.scss" as v;
+
+.portfolio {
+  @include mixins.component-margin-padding;
+
+  &__header {
+    @include mixins.component-header;
+  }
+
+  &__filters {
+    display: flex;
+
+    &--li {
+      display: inline-block;
+      margin-right: 10px;
+      position: relative;
+      text-transform: capitalize;
+      p {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--card {
+      width: 300px;
+      height: 200px;
+      cursor: pointer;
+      margin: 10px;
+
+      @include mixins.breakpoint(sm) {
+        width: 280px;
+      }
+    }
+  }
+
+  .active {
+    color: v.$green;
+  }
+}
