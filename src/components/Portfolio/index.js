@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Portfolio.scss";
 import Isotope from "isotope-layout";
+import { Link } from "react-router-dom";
 import image1 from "../../assets/card1.png";
 import image2 from "../../assets/card2.jpg";
 
@@ -73,7 +74,27 @@ export const Portfolio = () => {
               className={`portfolio__cards--card ${classname}`}
               style={{ backgroundImage: `url(${background})` }}
               key={id}
-            ></div>
+            >
+              <div className="portfolio__cards--card__hidden">
+                <h3 className="portfolio__cards--card__hidden--header">
+                  {classname}
+                </h3>
+                <p className="portfolio__cards--card__hidden--description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Earum, itaque. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Earum, itaque.
+                </p>
+                <Link
+                  className="portfolio__cards--card__hidden--link"
+                  to="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                  }}
+                >
+                  View resource
+                </Link>
+              </div>
+            </div>
           );
         })}
       </div>

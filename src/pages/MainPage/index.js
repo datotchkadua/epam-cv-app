@@ -1,5 +1,15 @@
 import React from "react";
-import { Box, TimeLine, Expertise, Skills, Portfolio } from "../../components";
+import {
+  Box,
+  TimeLine,
+  Expertise,
+  Skills,
+  Portfolio,
+  Address,
+  Feedback,
+} from "../../components";
+import personImage1 from "../../assets/person-circle-1.png";
+import personImage2 from "../../assets/person-circle-2.jpg";
 const dataBox = [
   {
     date: 2001,
@@ -38,6 +48,28 @@ const expertiseData = [
   },
 ];
 
+const feedbackData = [
+  {
+    id: 1,
+    person: "Martin Friman",
+    img: personImage1,
+    job: "programmer",
+    websiteLink: "https://www.facebook.com",
+    website: "facebook.com",
+    feedback:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,necessitatibus, aspernatur dolor minima soluta ratione aperiam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,necessitatibus, aspernatur dolor minima soluta ratione aperiam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,necessitatibus, aspernatur dolor minima soluta ratione aperiam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,necessitatibus, aspernatur dolor minima soluta ratione aperiam",
+  },
+  {
+    id: 2,
+    person: "John Smith",
+    img: personImage2,
+    job: "designer",
+    websiteLink: "https://twitter.com/wordpress",
+    website: "twitter.com",
+    feedback:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,necessitatibus, aspernatur dolor minima soluta ratione aperiam",
+  },
+];
 export const MainPage = () => {
   return (
     <div>
@@ -46,6 +78,8 @@ export const MainPage = () => {
       <Expertise data={expertiseData} />
       <Skills />
       <Portfolio />
+      <Address />
+      <Feedback data={feedbackData} />
     </div>
   );
 };

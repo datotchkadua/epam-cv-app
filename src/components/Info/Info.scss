@@ -1,0 +1,12 @@
+@use "../../styles/mixins.scss";
+@use "../../styles/variables.scss" as v;
+
+.info {
+  padding: 15px;
+  background-color: v.$gray;
+
+  margin-bottom: 30px;
+  &__description {
+    @include mixins.component-description;
+  }
+}

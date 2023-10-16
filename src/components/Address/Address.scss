@@ -1,0 +1,37 @@
+@use "../../styles/mixins.scss";
+@use "../../styles/variables.scss" as v;
+
+.address {
+  display: flex;
+  flex-direction: column;
+  @include mixins.component-margin-padding;
+
+  &__header {
+    @include mixins.component-header;
+  }
+
+  &__links {
+    display: flex;
+    margin: 10px 0px;
+    align-items: center;
+
+    &--box {
+      margin-left: 20px;
+
+      &__header {
+        font-size: 16px;
+        font-weight: v.$font-bold;
+      }
+      &__link {
+        font-size: 16px;
+        font-style: italic;
+        color: v.$gray-border;
+        text-decoration: none;
+        cursor: pointer;
+        &:active {
+          color: red;
+        }
+      }
+    }
+  }
+}

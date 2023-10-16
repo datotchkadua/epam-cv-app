@@ -29,7 +29,7 @@ const apiData = [
 ];
 
 export const Skills = () => {
-  const [isAddingSkills, setIsAddingSkills] = useState(true); ///false
+  const [isAddingSkills, setIsAddingSkills] = useState(false);
 
   function editSkills() {
     setIsAddingSkills(!isAddingSkills);

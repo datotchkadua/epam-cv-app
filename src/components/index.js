@@ -5,3 +5,6 @@ export * from "./TimeLine";
 export * from "./Expertise";
 export * from "./Skills";
 export * from "./Portfolio";
+export * from "./Address";
+export * from "./Info";
+export * from "./Feedback";
