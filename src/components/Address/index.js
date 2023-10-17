@@ -6,7 +6,7 @@ import { ReactComponent as TwitterLogo } from "../../assets/twitterLogo.svg";
 import { ReactComponent as FacebookLogo } from "../../assets/facebookLogo.svg";
 import { ReactComponent as SkypeLogo } from "../../assets/skypeLogo.svg";
 
-export const Address = () => {
+export const Address = ({ registerSection }) => {
   const addressData = [
     {
       id: 1,
@@ -46,7 +46,7 @@ export const Address = () => {
   ];
 
   return (
-    <div className="address">
+    <div className="address" ref={registerSection("contacts")}>
       <h2 className="address__header">Contacts</h2>
 
       {addressData.map((address) => {

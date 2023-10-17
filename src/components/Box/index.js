@@ -9,9 +9,9 @@ let str = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,
         doloribus, praesentium enim sint ducimus alias reprehenderit deleniti
         sequi eos inventore commodi veniam culpa.`;
 
-export const Box = ({ title, content = str }) => {
+export const Box = ({ title, content = str, registerSection }) => {
   return (
-    <div className="box">
+    <div className="box" ref={registerSection("about-section")}>
       <h2 className="box__header"> {title}</h2>
       <p className="box__description">{content}</p>
     </div>

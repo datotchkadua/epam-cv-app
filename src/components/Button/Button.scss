@@ -1,4 +1,5 @@
 @use "../../styles/variables.scss" as v;
+@use "../../styles/mixins.scss";
 
 .btn {
   display: inline-flex;
@@ -19,12 +20,17 @@
   &:hover {
     background-color: v.$green;
   }
-
   &:disabled {
     cursor: not-allowed;
     background-color: #667080;
     &:hover {
       background-color: #667080;
+    }
+  }
+
+  &__text {
+    @include mixins.breakpoint(600) {
+      display: none;
     }
   }
 }

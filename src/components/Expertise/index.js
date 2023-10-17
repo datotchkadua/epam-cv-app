@@ -1,9 +1,9 @@
 import React from "react";
 import "./Expertise.scss";
 
-export const Expertise = ({ data }) => {
+export const Expertise = ({ data, registerSection }) => {
   return (
-    <div className="experience">
+    <div className="experience" ref={registerSection("experience")}>
       <h2 className="experience__header">Experience</h2>
       <ul>
         {data.map((experience, i) => {

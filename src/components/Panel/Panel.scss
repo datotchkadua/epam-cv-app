@@ -1,0 +1,40 @@
+@use "../../styles/variables.scss" as v;
+@use "../../styles/mixins.scss";
+.panel {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  background-color: v.$darkGray;
+
+  @include mixins.breakpoint(600) {
+    align-items: center;
+    padding: 5px;
+    width: 80px;
+  }
+  &__burgerMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    background-color: v.$darkGray;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+  }
+
+  &__btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+}

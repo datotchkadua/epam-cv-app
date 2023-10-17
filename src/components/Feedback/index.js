@@ -1,9 +1,10 @@
 import React from "react";
 import { Info } from "../index";
 import "./Feedback.scss";
-export const Feedback = ({ data }) => {
+export const Feedback = ({ data, registerSection }) => {
   return (
-    <>
+    <div ref={registerSection("feedback")}>
+      <h2 className="feedback-header">Feedbacks</h2>
       {data.map((personFeedback) => {
         const { id, person, img, job, website, websiteLink, feedback } =
           personFeedback;
@@ -18,7 +19,7 @@ export const Feedback = ({ data }) => {
                   className="feedback__person-info__image"
                 />
                 <p className="feedback__person-info__description">
-                  {`${person}, ${job}, `}{" "}
+                  {`${person}, ${job}, `}
                   <a
                     className="feedback__person-info__description--link"
                     href={websiteLink}
@@ -33,6 +34,6 @@ export const Feedback = ({ data }) => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };

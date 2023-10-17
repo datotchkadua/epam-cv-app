@@ -1,0 +1,15 @@
+@use "../../styles/mixins.scss";
+
+.mainPage {
+  display: flex;
+  &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-left: 250px;
+
+    @include mixins.breakpoint(600) {
+      margin-left: 80px;
+    }
+  }
+}

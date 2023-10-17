@@ -24,6 +24,12 @@
     @media (max-width: 768px) {
       @content;
     }
+  }
+  @if $point == 600 {
+    // 768px
+    @media (max-width: 600px) {
+      @content;
+    }
   } @else if $point == sm {
     // 480px
     @media (max-width: 480px) {

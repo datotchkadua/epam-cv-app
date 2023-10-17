@@ -28,7 +28,7 @@ const apiData = [
   },
 ];
 
-export const Skills = () => {
+export const Skills = ({ registerSection }) => {
   const [isAddingSkills, setIsAddingSkills] = useState(false);
 
   function editSkills() {
@@ -42,7 +42,7 @@ export const Skills = () => {
   }
 
   return (
-    <div className="skills">
+    <div className="skills" ref={registerSection("skills")}>
       <div className="skills__top">
         <h2 className="skills__top--header">Skills</h2>
         <Button

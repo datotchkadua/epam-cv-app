@@ -3,7 +3,7 @@ import "./Button.scss";
 export const Button = ({ disabledBtn = false, icon, text, clickFunc }) => {
   return (
     <button disabled={disabledBtn} className="btn" onClick={clickFunc}>
-      {icon} {text}
+      {icon} <span className="btn__text">{text}</span>
     </button>
   );
 };

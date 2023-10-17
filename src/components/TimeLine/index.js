@@ -1,9 +1,9 @@
 import React from "react";
 import "./Timeline.scss";
-export const TimeLine = ({ data }) => {
+export const TimeLine = ({ data, registerSection }) => {
   //   console.log(data);
   return (
-    <div className="timeline">
+    <div className="timeline" ref={registerSection("education")}>
       <h2 className="timeline__header">Education</h2>
       <ul className="timeline__list">
         {data

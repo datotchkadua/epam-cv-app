@@ -1,0 +1,45 @@
+@use "../../styles/variables.scss" as v;
+@use "../../styles/mixins.scss";
+
+.navbar {
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  &__ul {
+    padding: 5px;
+    list-style: none;
+
+    &--list {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      margin-bottom: 30px;
+      cursor: pointer;
+
+      &__header {
+        margin-left: 20px;
+        color: v.$gray-border;
+        transition: color 0.3s;
+        @include mixins.breakpoint(600) {
+          display: none;
+        }
+      }
+
+      &:hover {
+        .navbar__ul--list__svg {
+          fill: v.$green;
+          transition: fill 0.3s;
+        }
+
+        .navbar__ul--list__header {
+          color: v.$green;
+        }
+      }
+    }
+    &--list button.active {
+      color: v.$green;
+    }
+  }
+}

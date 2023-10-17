@@ -8,3 +8,5 @@ export * from "./Portfolio";
 export * from "./Address";
 export * from "./Info";
 export * from "./Feedback";
+export * from "./Navigation";
+export * from "./Panel";
