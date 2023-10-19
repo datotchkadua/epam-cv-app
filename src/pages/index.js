@@ -1,2 +1,2 @@
-export * from "./HomePage";
-export * from "./MainPage";
+export * from "./HomePage/HomePage";
+export * from "./MainPage/MainPage";

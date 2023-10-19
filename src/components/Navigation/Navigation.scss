@@ -18,28 +18,31 @@
       margin-bottom: 30px;
       cursor: pointer;
 
-      &__header {
+      .linkScroll {
+        display: flex;
+        align-items: center;
+      }
+
+      &__title {
         margin-left: 20px;
         color: v.$gray-border;
         transition: color 0.3s;
-        @include mixins.breakpoint(600) {
+        @include mixins.breakpoint(650) {
           display: none;
         }
       }
 
-      &:hover {
+      &:hover,
+      .active {
         .navbar__ul--list__svg {
           fill: v.$green;
           transition: fill 0.3s;
         }
 
-        .navbar__ul--list__header {
+        .navbar__ul--list__title {
           color: v.$green;
         }
       }
-    }
-    &--list button.active {
-      color: v.$green;
     }
   }
 }

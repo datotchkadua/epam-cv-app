@@ -1,13 +1,11 @@
 import React from "react";
 import { Info } from "../index";
 import "./Feedback.scss";
-export const Feedback = ({ data, registerSection }) => {
+export const Feedback = ({ data }) => {
   return (
-    <div ref={registerSection("feedback")}>
+    <section id="feedback">
       <h2 className="feedback-header">Feedbacks</h2>
-      {data.map((personFeedback) => {
-        const { id, person, img, job, website, websiteLink, feedback } =
-          personFeedback;
+      {data.map(({ id, person, img, job, website, websiteLink, feedback }) => {
         return (
           <div className="feedback" key={id}>
             <>
@@ -34,6 +32,6 @@ export const Feedback = ({ data, registerSection }) => {
           </div>
         );
       })}
-    </div>
+    </section>
   );
 };

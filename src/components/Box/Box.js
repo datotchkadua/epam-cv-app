@@ -9,11 +9,11 @@ let str = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,
         doloribus, praesentium enim sint ducimus alias reprehenderit deleniti
         sequi eos inventore commodi veniam culpa.`;
 
-export const Box = ({ title, content = str, registerSection }) => {
+export const Box = ({ title, content = str }) => {
   return (
-    <div className="box" ref={registerSection("about-section")}>
-      <h2 className="box__header"> {title}</h2>
+    <section className="box" id="about-section">
+      <h2 className="title"> {title}</h2>
       <p className="box__description">{content}</p>
-    </div>
+    </section>
   );
 };

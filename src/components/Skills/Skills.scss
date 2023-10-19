@@ -9,10 +9,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    &--header {
-      @include mixins.component-header;
-    }
   }
   &__edit-container {
     border: 1px solid v.$green;
@@ -20,6 +16,11 @@
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 40px;
+    max-width: 450px;
+    @include mixins.breakpoint(sm) {
+      width: 240px;
+      padding: 20px 10px;
+    }
 
     &__form {
       display: flex;
@@ -43,6 +44,13 @@
           &:focus {
             outline: none;
           }
+          @include mixins.breakpoint(sm) {
+            width: 200px;
+          }
+        }
+        @include mixins.breakpoint(md) {
+          align-items: start;
+          flex-direction: column;
         }
       }
     }
@@ -90,6 +98,10 @@
       padding: 0px;
       color: v.$gray-border;
       margin-top: 10px;
+
+      @include mixins.breakpoint(sm) {
+        font-size: 14px;
+      }
     }
   }
 }

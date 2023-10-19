@@ -10,7 +10,7 @@ export const HomePage = () => {
     navigate("/main");
   }
   return (
-    <div className="homePage">
+    <section className="homePage">
       <PhotoBox
         name="Dato Tchkadua"
         title="Programmer. Creative. Innovator"
@@ -18,6 +18,6 @@ export const HomePage = () => {
         avatar={avatarImg}
       />
       <Button text="Know more" clickFunc={handleClick} />
-    </div>
+    </section>
   );
 };

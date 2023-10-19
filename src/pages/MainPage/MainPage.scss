@@ -7,9 +7,13 @@
     flex: 1;
     flex-direction: column;
     margin-left: 250px;
-
-    @include mixins.breakpoint(600) {
+    transition: all 0.3s linear;
+    @include mixins.breakpoint(650) {
       margin-left: 80px;
     }
   }
+}
+
+.no-margin {
+  margin-left: 0px;
 }

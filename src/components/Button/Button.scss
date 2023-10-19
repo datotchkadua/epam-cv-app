@@ -28,8 +28,8 @@
     }
   }
 
-  &__text {
-    @include mixins.breakpoint(600) {
+  &__text-hide {
+    @include mixins.breakpoint(650) {
       display: none;
     }
   }

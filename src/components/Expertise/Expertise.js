@@ -1,17 +1,12 @@
 import React from "react";
 import "./Expertise.scss";
 
-export const Expertise = ({ data, registerSection }) => {
+export const Expertise = ({ data }) => {
   return (
-    <div className="experience" ref={registerSection("experience")}>
-      <h2 className="experience__header">Experience</h2>
+    <section className="experience" id="experience">
+      <h2 className="title">Experience</h2>
       <ul>
-        {data.map((experience, i) => {
-          //   console.log(experience);
-          const {
-            date,
-            info: { company, job, description },
-          } = experience;
+        {data.map(({ date, info: { company, job, description } }, i) => {
           return (
             <li className="experience__list" key={i}>
               <div className="experience__list--company-year">
@@ -32,6 +27,6 @@ export const Expertise = ({ data, registerSection }) => {
           );
         })}
       </ul>
-    </div>
+    </section>
   );
 };

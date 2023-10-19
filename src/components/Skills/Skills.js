@@ -28,7 +28,7 @@ const apiData = [
   },
 ];
 
-export const Skills = ({ registerSection }) => {
+export const Skills = () => {
   const [isAddingSkills, setIsAddingSkills] = useState(false);
 
   function editSkills() {
@@ -42,9 +42,9 @@ export const Skills = ({ registerSection }) => {
   }
 
   return (
-    <div className="skills" ref={registerSection("skills")}>
+    <section className="skills" id="skills">
       <div className="skills__top">
-        <h2 className="skills__top--header">Skills</h2>
+        <h2 className="title">Skills</h2>
         <Button
           icon={<FontAwesomeIcon icon={faPenToSquare} />}
           text="Open edit"
@@ -80,9 +80,7 @@ export const Skills = ({ registerSection }) => {
         </div>
       )}
       <div className="skills__charts">
-        {apiData.map((skillInfo) => {
-          const { skill, range } = skillInfo;
-
+        {apiData.map(({ skill, range }) => {
           return (
             <div
               className="skills__charts--bar"
@@ -109,6 +107,6 @@ export const Skills = ({ registerSection }) => {
           <div className="skills__charts--labels__label">Master</div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

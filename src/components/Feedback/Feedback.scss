@@ -3,15 +3,18 @@
 
 .feedback-header {
   @include mixins.component-header;
-  margin-left: 30px;
+  margin-left: 40px;
+  @include mixins.breakpoint(sm) {
+    // margin-left: 0px;
+  }
 }
 .feedback {
-   margin: 40px 20px;
- 
+  margin: 40px 20px;
   padding: 0px 10px;
   &__person-info {
     display: flex;
     align-items: center;
+    margin-left: 10px;
     &__image {
       width: 50px;
       height: 50px;

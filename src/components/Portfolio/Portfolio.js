@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import image1 from "../../assets/card1.png";
 import image2 from "../../assets/card2.jpg";
 
-export const Portfolio = ({ registerSection }) => {
+export const Portfolio = () => {
   const [isotope, setIsotope] = useState(null);
   const [filterKey, setFilterKey] = useState("*");
 
@@ -37,8 +37,8 @@ export const Portfolio = ({ registerSection }) => {
   ];
 
   return (
-    <div className="portfolio" ref={registerSection("portfolio")}>
-      <h2 className="portfolio__header">Portfolio</h2>
+    <section className="portfolio" id="portfolio">
+      <h2 className="title">Portfolio</h2>
       <ul className="portfolio__filters">
         <li className="portfolio__filters--li">
           <p
@@ -66,9 +66,7 @@ export const Portfolio = ({ registerSection }) => {
         </li>
       </ul>
       <div className="portfolio__cards">
-        {cardsArr.map((card) => {
-          const { background, classname, id } = card;
-
+        {cardsArr.map(({ background, classname, id }) => {
           return (
             <div
               className={`portfolio__cards--card ${classname}`}
@@ -98,6 +96,6 @@ export const Portfolio = ({ registerSection }) => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };

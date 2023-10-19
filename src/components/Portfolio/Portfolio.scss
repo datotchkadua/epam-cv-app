@@ -4,10 +4,6 @@
 .portfolio {
   @include mixins.component-margin-padding;
 
-  &__header {
-    @include mixins.component-header;
-  }
-
   &__filters {
     display: flex;
 
@@ -36,7 +32,7 @@
       overflow: hidden;
       background-size: cover;
       @include mixins.breakpoint(sm) {
-        width: 280px;
+        width: 240px;
       }
       &:hover &__hidden {
         bottom: 0%;

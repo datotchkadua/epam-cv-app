@@ -9,16 +9,13 @@
     flex-direction: column;
     max-width: 450px;
   }
-  // img styles here
-  //  @include mixins.breakpoint(sm) {
-  //     justify-content: flex-start;
-  //   }
+
   &__container--person-img {
     @include mixins.breakpoint(md) {
       width: 100px;
       height: 100px;
     }
-    @include mixins.breakpoint(600) {
+    @include mixins.breakpoint(650) {
       width: 70px;
       height: 70px;
     }
@@ -26,7 +23,7 @@
 
   &__container--person-name {
     margin-top: 15px;
-    @include mixins.breakpoint(600) {
+    @include mixins.breakpoint(650) {
       display: none;
     }
   }
@@ -34,16 +31,26 @@
   &__container--person-position {
     font-size: 25px;
     margin: 10px;
-    @include mixins.breakpoint(600) {
+    @include mixins.breakpoint(650) {
       font-size: 20px;
     }
-    @include mixins.breakpoint(sm) {
-      font-size: 14px;
-    }
+   
   }
 
   &__container--person-description {
     font-size: 14px;
     margin-bottom: 15px;
   }
+}
+
+.smImg {
+  @include mixins.breakpoint(650) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.visible-name {
+  display: block;
+  font-size: 32px;
 }

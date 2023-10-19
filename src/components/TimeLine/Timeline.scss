@@ -6,9 +6,7 @@
   overflow-y: auto;
   @include mixins.component-margin-padding;
 
-  &__header {
-    @include mixins.component-header;
-  }
+ 
 
   &__list {
     position: relative;

@@ -1,23 +1,5 @@
 @use "./variables.scss" as v;
 
-@mixin component-header {
-  font-size: 25px;
-  font-weight: v.$font-bold;
-  color: v.$green;
-  margin-bottom: 20px;
-}
-@mixin component-description {
-  font-size: 14px;
-  font-weight: v.$font-normal;
-  color: v.$darkGray;
-}
-
-@mixin component-margin-padding {
-  margin: 20px;
-  padding: 20px 10px;
-}
-
-// screen
 @mixin breakpoint($point) {
   @if $point == md {
     // 768px
@@ -25,9 +7,9 @@
       @content;
     }
   }
-  @if $point == 600 {
+  @if $point == 650 {
     // 768px
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
       @content;
     }
   } @else if $point == sm {
@@ -37,3 +19,31 @@
     }
   }
 }
+
+@mixin component-header {
+  font-size: 25px;
+  font-weight: v.$font-bold;
+  color: v.$green;
+  margin-bottom: 20px;
+  @include breakpoint(sm) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+@mixin component-description {
+  font-size: 14px;
+  font-weight: v.$font-normal;
+  color: v.$darkGray;
+}
+
+@mixin component-margin-padding {
+  margin: 30px;
+  padding: 20px 10px;
+  min-height: 250px;
+  @include breakpoint(sm) {
+ 
+     margin: 0px;
+   margin-left:20px;
+  }
+}
+

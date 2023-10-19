@@ -6,10 +6,6 @@
   flex-direction: column;
   @include mixins.component-margin-padding;
 
-  &__header {
-    @include mixins.component-header;
-  }
-
   &__links {
     display: flex;
     margin: 10px 0px;
@@ -30,6 +26,9 @@
         cursor: pointer;
         &:active {
           color: red;
+        }
+        @include mixins.breakpoint(sm) {
+          font-size: 14px;
         }
       }
     }

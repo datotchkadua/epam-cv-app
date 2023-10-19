@@ -1,10 +1,9 @@
 import React from "react";
 import "./Timeline.scss";
-export const TimeLine = ({ data, registerSection }) => {
-  //   console.log(data);
+export const TimeLine = ({ data }) => {
   return (
-    <div className="timeline" ref={registerSection("education")}>
-      <h2 className="timeline__header">Education</h2>
+    <section className="timeline" id="education">
+      <h2 className="title">Education</h2>
       <ul className="timeline__list">
         {data
           .slice()
@@ -18,7 +17,7 @@ export const TimeLine = ({ data, registerSection }) => {
                 <div className="timeline__list--item__info">
                   <div className="timeline__list--item__info--div">
                     <h3 className="timeline__list--item__info--div__header">
-                      {`Title ${i + 1}`} {/* {experience.title} */}
+                      {`Title ${i + 1}`}
                     </h3>
                     <p className="timeline__list--item__info--div__description">
                       {experience.text}
@@ -30,6 +29,6 @@ export const TimeLine = ({ data, registerSection }) => {
           })}
         {/*  */}
       </ul>
-    </div>
+    </section>
   );
 };

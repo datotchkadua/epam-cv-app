@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   TimeLine,
@@ -12,8 +12,6 @@ import {
 import personImage1 from "../../assets/person-circle-1.png";
 import personImage2 from "../../assets/person-circle-2.jpg";
 import "./MainPage.scss";
-// eslint-disable-next-line
-import { useActiveMenu } from "react-active-menu";
 
 const dataBox = [
   {
@@ -66,6 +64,16 @@ const feedbackData = [
   },
   {
     id: 2,
+    person: "Martin Friman",
+    img: personImage1,
+    job: "programmer",
+    websiteLink: "https://www.facebook.com",
+    website: "facebook.com",
+    feedback:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,necessitatibus, aspernatur dolor minima soluta ratione aperiam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,necessitatibus, aspernatur dolor minima soluta ratione aperiam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,necessitatibus, aspernatur dolor minima soluta ratione aperiam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,necessitatibus, aspernatur dolor minima soluta ratione aperiam",
+  },
+  {
+    id: 3,
     person: "John Smith",
     img: personImage2,
     job: "designer",
@@ -77,23 +85,30 @@ const feedbackData = [
 ];
 
 export const MainPage = () => {
-  const { activeId, registerSection, registerTrigger } = useActiveMenu({
-    smooth: true,
-    offset: 150,
-  });
-
+  const [isVisibleSidebar, setIsVisibleSidebar] = useState(true);
   return (
-    <div className="mainPage">
-      <section className="mainPage__content">
-        <Box title="About me" registerSection={registerSection} />
-        <TimeLine data={dataBox} registerSection={registerSection} />
-        <Expertise data={expertiseData} registerSection={registerSection} />
-        <Skills registerSection={registerSection} />
-        <Portfolio registerSection={registerSection} />
-        <Address registerSection={registerSection} />
-        <Feedback data={feedbackData} registerSection={registerSection} />
+    <section className="mainPage">
+      <section
+        className={`${
+          !isVisibleSidebar
+            ? "mainPage__content no-margin "
+            : "mainPage__content"
+        }`}
+
+
+      >
+        <Box title="About me" />
+        <TimeLine data={dataBox} />
+        <Expertise data={expertiseData} />
+        <Skills />
+        <Portfolio />
+        <Address />
+        <Feedback data={feedbackData} />
       </section>
-      <Panel ctiveId={activeId} registerTrigger={registerTrigger} a />
-    </div>
+      <Panel
+        isVisibleSidebar={isVisibleSidebar}
+        setIsVisibleSidebar={setIsVisibleSidebar}
+      />
+    </section>
   );
 };

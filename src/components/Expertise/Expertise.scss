@@ -5,10 +5,6 @@
   min-height: 200px;
   @include mixins.component-margin-padding;
 
-  &__header {
-    @include mixins.component-header;
-  }
-
   &__list {
     display: flex;
     align-items: flex-start;
@@ -18,14 +14,19 @@
       min-width: 160px;
       margin-right: 20px;
       @include mixins.breakpoint(sm) {
-        min-width: 120px;
+        min-width: 90px;
+        margin-right: 0px;
       }
       &__company {
         margin-bottom: v.$header-mb;
+         @include mixins.breakpoint(sm) {
+          font-size: 16px;
+        }
       }
       &__year {
         font-size: 16px;
         color: #667081;
+        
       }
     }
 
@@ -35,6 +36,9 @@
 
       &__position {
         margin-bottom: v.$header-mb;
+        @include mixins.breakpoint(sm) {
+          font-size: 16px;
+        }
       }
 
       &__description {
