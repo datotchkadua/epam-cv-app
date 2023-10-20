@@ -25,7 +25,6 @@ export const PhotoBox = ({ name, title, description, avatar }) => {
         >
           {name}
         </h1>
-        {/* //<h1 className="photoBox__container--person-name">{name}</h1> */}
         <h3 className="photoBox__container--person-position">{title}</h3>
         <p className="photoBox__container--person-description">{description}</p>
       </div>

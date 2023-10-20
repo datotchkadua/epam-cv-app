@@ -5,8 +5,9 @@
   max-height: 80vh;
   overflow-y: auto;
   @include mixins.component-margin-padding;
-
- 
+  @include mixins.breakpoint(min) {
+    width: 240px;
+  }
 
   &__list {
     position: relative;
@@ -41,11 +42,17 @@
           background: v.$gray;
           padding: 15px;
 
-          &__header {
+          &__title {
             margin-bottom: v.$header-mb;
+            @include mixins.breakpoint(min) {
+              font-size: 14px;
+            }
           }
           &__description {
             @include mixins.component-description;
+            @include mixins.breakpoint(min) {
+              font-size: 12px;
+            }
           }
         }
 

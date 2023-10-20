@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import "./Panel.scss";
-import { ReactComponent as HamburgerMenu } from "../../assets/hamburger-menu.svg";
+import hamburgerMenu from "../../assets/hamburger-menu.svg";
 
 export const Panel = ({ isVisibleSidebar, setIsVisibleSidebar }) => {
   const navigate = useNavigate();
@@ -17,17 +17,20 @@ export const Panel = ({ isVisibleSidebar, setIsVisibleSidebar }) => {
   }
   return (
     <aside className={`${!isVisibleSidebar ? "panel hide-panel" : "panel"}`}>
-      <p className="panel__burgerMenu" onClick={toggleSidebar}>
-        <HamburgerMenu />
-      </p>
+      <Button
+        onClickFunc={toggleSidebar}
+        btnClass="burger-btn"
+        icon={<img src={hamburgerMenu} alt="burger-menu" />}
+      />
 
       <PhotoBox name="Dato Tchkadua" avatar={avatarImg} />
       <Navigation />
       <div className="panel__btn-container">
         <Button
+          btnClass="btn navbar-btn"
           text="Go back"
           icon={<FontAwesomeIcon icon={faChevronLeft} />}
-          clickFunc={backToHomePage}
+          onClickFunc={backToHomePage}
         />
       </div>
     </aside>

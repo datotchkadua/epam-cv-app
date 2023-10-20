@@ -2,35 +2,60 @@
 @use "../../styles/mixins.scss";
 
 .btn {
-  display: inline-flex;
+  @include mixins.btn-mixin;
   max-width: 125px;
   height: 40px;
   padding: 10px 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  cursor: pointer;
   border-radius: 5px;
-  background-color: v.$darkGray;
-  border: none;
-  transition: 0.3s;
-  color: v.$white;
-
-  &:hover {
-    background-color: v.$green;
-  }
-  &:disabled {
-    cursor: not-allowed;
-    background-color: #667080;
-    &:hover {
-      background-color: #667080;
-    }
-  }
 
   &__text-hide {
+    margin-left: 5px;
     @include mixins.breakpoint(650) {
+    
       display: none;
+      margin: 0px;
     }
   }
+}
+
+.navbar-btn {
+  @include mixins.breakpoint(650) {
+    max-width: 30px;
+    height: 35px;
+  }
+}
+
+.burger-btn {
+  @include mixins.btn-mixin;
+
+  position: absolute;
+  right: -30px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  @include mixins.breakpoint(650) {
+    top: 15px;
+  }
+}
+
+.skills-btn {
+  @include mixins.breakpoint(650) {
+    width: 55px;
+    height: 45px;
+  }
+}
+
+.scroll-btn {
+  @include mixins.btn-mixin;
+  width: 35px;
+  height: 35px;
+  padding: 10px;
+  position: fixed;
+  right: 25px;
+  bottom: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }

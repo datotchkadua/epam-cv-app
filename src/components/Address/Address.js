@@ -39,7 +39,7 @@ export const Address = () => {
     {
       id: 5,
       Svgcomponent: SkypeLogo,
-      header: "Skye",
+      header: "Skype",
       link: "datoo944",
       href: "skype:datoo944?call",
     },
@@ -48,7 +48,6 @@ export const Address = () => {
   return (
     <section className="address" id="contacts">
       <h2 className="title">Contacts</h2>
-
       {addressData.map(({ id, Svgcomponent, header, link, href }) => {
         return (
           <div className="address__links" key={id}>
