@@ -12,16 +12,15 @@ export const Portfolio = () => {
   useEffect(() => {
     setIsotope(
       new Isotope(".portfolio__cards", {
-        // portfolio__cards: className of the parent of the isotope elements
-        itemSelector: ".portfolio__cards--card", // portfolio__cards--card: className of the isotope elements
-        layoutMode: "fitRows", // for horizontal isotope
+       
+        itemSelector: ".portfolio__cards--card", 
+        layoutMode: "fitRows", 
       })
     );
   }, []);
 
   useEffect(() => {
     if (isotope) {
-      // sanity check
       filterKey === "*"
         ? isotope.arrange({ filter: `*` })
         : isotope.arrange({ filter: `.${filterKey}` });
@@ -74,7 +73,7 @@ export const Portfolio = () => {
               key={id}
             >
               <div className="portfolio__cards--card__hidden">
-                <h3 className="portfolio__cards--card__hidden--header">
+                <h3 className="portfolio__cards--card__hidden--title">
                   {classname}
                 </h3>
                 <p className="portfolio__cards--card__hidden--description">

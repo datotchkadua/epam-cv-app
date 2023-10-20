@@ -3,10 +3,10 @@
 .box {
   display: flex;
   flex-direction: column;
-  // @include mixins.breakpoint(sm) {
-  //   justify-content: center;
-  //   align-items: center;
-  // }
+  @include mixins.breakpoint(sm) {
+    width: 220px;
+  
+  }
   @include mixins.component-margin-padding;
 
   &__description {

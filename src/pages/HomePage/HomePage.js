@@ -17,7 +17,7 @@ export const HomePage = () => {
         description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque"
         avatar={avatarImg}
       />
-      <Button text="Know more" clickFunc={handleClick} />
+      <Button btnClass={"btn"} text="Know more" onClickFunc={handleClick} />
     </section>
   );
 };

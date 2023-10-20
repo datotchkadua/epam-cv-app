@@ -5,18 +5,29 @@
   display: flex;
   flex-direction: column;
   @include mixins.component-margin-padding;
-
+  @include mixins.breakpoint(min) {
+    width: 220px;
+  }
   &__links {
     display: flex;
     margin: 10px 0px;
     align-items: center;
-
+    @include mixins.breakpoint(min) {
+      align-items: start;
+      flex-direction: column;
+    }
     &--box {
       margin-left: 20px;
 
+      @include mixins.breakpoint(min) {
+        margin-left: 0px;
+      }
       &__header {
         font-size: 16px;
         font-weight: v.$font-bold;
+        @include mixins.breakpoint(min) {
+          display: none;
+        }
       }
       &__link {
         font-size: 16px;
@@ -30,7 +41,16 @@
         @include mixins.breakpoint(sm) {
           font-size: 14px;
         }
+        @include mixins.breakpoint(min) {
+          font-size: 12px;
+        }
       }
     }
+  }
+}
+
+.address-svg {
+  @include mixins.breakpoint(min) {
+    transform: scale(0.65);
   }
 }

@@ -15,36 +15,19 @@
 
   @include mixins.breakpoint(650) {
     align-items: center;
-    padding: 5px;
+    padding: 10px 5px;
     width: 50px;
-  }
-
-  &__burgerMenu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: -30px;
-    top: 20px;
-    width: 30px;
-    height: 30px;
-    background-color: v.$darkGray;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    cursor: pointer;
-    @include mixins.breakpoint(650) {
-      top: 10px;
-      right: -25px;
-      width: 25px;
-      height: 25px;
-    }
   }
 
   &__btn-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+
     padding: 5px;
+    @include mixins.breakpoint(650) {
+      height: 100%;
+      align-items: flex-end;
+    }
   }
 }
 

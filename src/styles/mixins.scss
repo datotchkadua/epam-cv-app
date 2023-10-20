@@ -2,19 +2,21 @@
 
 @mixin breakpoint($point) {
   @if $point == md {
-    // 768px
     @media (max-width: 768px) {
       @content;
     }
   }
   @if $point == 650 {
-    // 768px
     @media (max-width: 650px) {
       @content;
     }
-  } @else if $point == sm {
-    // 480px
+  }
+  @if $point == sm {
     @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $point == min {
+    @media (max-width: 390px) {
       @content;
     }
   }
@@ -26,6 +28,7 @@
   color: v.$green;
   margin-bottom: 20px;
   @include breakpoint(sm) {
+    font-size: 22px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -41,9 +44,30 @@
   padding: 20px 10px;
   min-height: 250px;
   @include breakpoint(sm) {
- 
-     margin: 0px;
-   margin-left:20px;
+    padding: 10px;
+    margin: 0px;
+    margin-left: 25px;
   }
 }
 
+@mixin btn-mixin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+  color: v.$white;
+  border: transparent;
+  background-color: v.$darkGray;
+
+  &:hover {
+    background-color: v.$green;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #667080;
+    &:hover {
+      background-color: #667080;
+    }
+  }
+}

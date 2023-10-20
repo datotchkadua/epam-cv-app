@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Skills.scss";
 import { Button } from "../index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-//
+import { faPenToSquare, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+
 
 const apiData = [
   {
@@ -16,15 +16,15 @@ const apiData = [
   },
   {
     skill: "Javascript",
-    range: 10,
+    range: 70,
   },
   {
     skill: "React",
-    range: 75,
+    range: 45,
   },
   {
     skill: "Node.js",
-    range: 10,
+    range: 20,
   },
 ];
 
@@ -33,7 +33,6 @@ export const Skills = () => {
 
   function editSkills() {
     setIsAddingSkills(!isAddingSkills);
-    console.log("edited skills");
   }
 
   function addSkill(e) {
@@ -46,9 +45,10 @@ export const Skills = () => {
       <div className="skills__top">
         <h2 className="title">Skills</h2>
         <Button
+          btnClass="btn "
           icon={<FontAwesomeIcon icon={faPenToSquare} />}
           text="Open edit"
-          clickFunc={editSkills}
+          onClickFunc={editSkills}
         />
       </div>
       {isAddingSkills && (
@@ -75,7 +75,13 @@ export const Skills = () => {
               />
             </div>
 
-            <Button disabledBtn={true} text="Add skill" clickFunc={addSkill} />
+            <Button
+              btnClass="btn skills-btn"
+              icon={<FontAwesomeIcon icon={faUserPlus} />}
+              disabledBtn={true}
+              text="Add skill"
+              onClickFunc={addSkill}
+            />
           </form>
         </div>
       )}

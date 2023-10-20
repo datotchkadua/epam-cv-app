@@ -16,7 +16,7 @@ export const TimeLine = ({ data }) => {
                 </div>
                 <div className="timeline__list--item__info">
                   <div className="timeline__list--item__info--div">
-                    <h3 className="timeline__list--item__info--div__header">
+                    <h3 className="timeline__list--item__info--div__title">
                       {`Title ${i + 1}`}
                     </h3>
                     <p className="timeline__list--item__info--div__description">

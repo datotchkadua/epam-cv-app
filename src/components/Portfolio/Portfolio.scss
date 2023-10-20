@@ -34,6 +34,10 @@
       @include mixins.breakpoint(sm) {
         width: 240px;
       }
+      @include mixins.breakpoint(min) {
+        width: 170px;
+        height: 140px;
+      }
       &:hover &__hidden {
         bottom: 0%;
       }
@@ -48,7 +52,7 @@
         background: hsla(0, 0%, 100%, 0.95);
         color: v.$darkGray;
         transition: all 0.4s ease;
-        &--header {
+        &--title {
           color: v.$green;
           font-size: 19px;
           font-weight: v.$font-bold;

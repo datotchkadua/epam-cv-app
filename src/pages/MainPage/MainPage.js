@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { animateScroll as scroll } from "react-scroll";
 import {
   Box,
   TimeLine,
@@ -8,11 +9,12 @@ import {
   Address,
   Feedback,
   Panel,
+  Button,
 } from "../../components";
 import personImage1 from "../../assets/person-circle-1.png";
 import personImage2 from "../../assets/person-circle-2.jpg";
+import arrowUpSvg from "../../assets/arrow-up.svg";
 import "./MainPage.scss";
-
 const dataBox = [
   {
     date: 2001,
@@ -86,6 +88,9 @@ const feedbackData = [
 
 export const MainPage = () => {
   const [isVisibleSidebar, setIsVisibleSidebar] = useState(true);
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
   return (
     <section className="mainPage">
       <section
@@ -94,8 +99,6 @@ export const MainPage = () => {
             ? "mainPage__content no-margin "
             : "mainPage__content"
         }`}
-
-
       >
         <Box title="About me" />
         <TimeLine data={dataBox} />
@@ -104,6 +107,11 @@ export const MainPage = () => {
         <Portfolio />
         <Address />
         <Feedback data={feedbackData} />
+        <Button
+          btnClass="scroll-btn"
+          icon={<img src={arrowUpSvg} alt="burger-menu" />}
+          onClickFunc={scrollToTop}
+        />
       </section>
       <Panel
         isVisibleSidebar={isVisibleSidebar}

@@ -4,6 +4,9 @@
 .experience {
   min-height: 200px;
   @include mixins.component-margin-padding;
+  @include mixins.breakpoint(sm) {
+    width: 240px;
+  }
 
   &__list {
     display: flex;
@@ -19,14 +22,13 @@
       }
       &__company {
         margin-bottom: v.$header-mb;
-         @include mixins.breakpoint(sm) {
+        @include mixins.breakpoint(sm) {
           font-size: 16px;
         }
       }
       &__year {
         font-size: 16px;
         color: #667081;
-        
       }
     }
 
