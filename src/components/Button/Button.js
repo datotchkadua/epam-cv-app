@@ -8,14 +8,15 @@ export const Button = ({
   text,
   onClickFunc,
   btnClass,
+  type,
 }) => {
   const location = useLocation();
-
   return (
     <button
       className={`${btnClass}`}
       disabled={disabledBtn}
       onClick={onClickFunc}
+      type={type || "button"}
     >
       {icon}
       <p
