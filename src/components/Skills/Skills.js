@@ -11,6 +11,7 @@ import {
 } from "../../features/skills/skillsSlice";
 import { useFormik } from "formik";
 import { skillSchema } from "../../schemas";
+import { v4 } from "uuid";
 
 export const Skills = () => {
   const {
@@ -43,7 +44,7 @@ export const Skills = () => {
     },
     validationSchema: skillSchema,
     onSubmit: (values) => {
-      submitSkills({ ...values, id: Math.random() });
+      submitSkills({ ...values, id: v4() });
       resetForm();
     },
   });

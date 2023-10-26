@@ -2,6 +2,7 @@ import React from "react";
 import "./Navigation.scss";
 import { Link } from "react-scroll";
 import { SvgComponent } from "../SvgComponent/SvgComponent";
+
 export const Navigation = ({ activeId }) => {
   const navData = [
     {
