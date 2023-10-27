@@ -72,7 +72,7 @@ export const Skills = () => {
             onSubmit={submitSkills}
           >
             <div className="skills__edit-container__form--group">
-              <label htmlFor="skill-name">Skill name:</label>
+              <label htmlFor="skill-name">Skill name</label>
               <div>
                 <input
                   id="skill"
@@ -93,7 +93,7 @@ export const Skills = () => {
               </div>
             </div>
             <div className="skills__edit-container__form--group">
-              <label htmlFor="skill-name">Skill range:</label>
+              <label htmlFor="skill-name">Skill range</label>
               <div>
                 <input
                   id="range"
